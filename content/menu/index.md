@@ -2,4 +2,5 @@
 headless: true
 ---
 
-- [**Home**]({{< relref "/" >}})
+- [Home]({{< relref "/" >}})
+- [Downloads]({{< relref "/downloads" >}})

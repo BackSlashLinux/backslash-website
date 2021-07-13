@@ -1,17 +1,10 @@
-baseURL = "http://example.org/"
+baseURL = "https://backslashlinux.com/"
 languageCode = "en-us"
 title = "BackSlash Linux"
 
 # (Optional) Set Google Analytics if you use it to track your website.
 # Always put it on the top of the configuration file, otherwise it won't work
 # googleAnalytics = "UA-XXXXXXXXX-X"
-
-# (Optional) If you provide a Disqus shortname, comments will be enabled on
-# all pages.
-# disqusShortname = "my-site"
-
-# (Optional) Set this to true if you use capital letters in file names
-# disablePathToLower = true
 
 # (Optional) Set this to true to enable 'Last Modified by' date and git author
 #  information on 'doc' type pages.
@@ -57,7 +50,7 @@ disableKinds = ['taxonomy', 'taxonomyTerm']
   # Enable 'Edit this page' links for 'doc' page type.
   # Disabled by default. Uncomment to enable. Requires 'BookRepo' param.
   # Path must point to the site directory.
-  BookEditPath = 'edit/master/exampleSite'
+  BookEditPath = 'edit/master'
 
   # (Optional, default January 2, 2006) Configure the date format used on the pages
   # - In git information
@@ -67,19 +60,7 @@ disableKinds = ['taxonomy', 'taxonomyTerm']
   # (Optional, default true) Enables search function with flexsearch,
   # Index is built on fly, therefore it might slowdown your website.
   # Configuration for indexing can be adjusted in i18n folder per language.
-  BookSearch = true
-
-  # (Optional, default true) Enables comments template on pages
-  # By default partials/docs/comments.html includes Disqus template
-  # See https://gohugo.io/content-management/comments/#configure-disqus
-  # Can be overwritten by same param in page frontmatter
-#   BookComments = true
-
-  # /!\ This is an experimental feature, might be removed or changed at any time
-  # (Optional, experimental, default false) Enables portable links and link checks in markdown pages.
-  # Portable links meant to work with text editors and let you write markdown without {{< relref >}} shortcode
-  # Theme will print warning if page referenced in markdown does not exists.
-  BookPortableLinks = true
+  BookSearch = false
 
   # /!\ This is an experimental feature, might be removed or changed at any time
   # (Optional, experimental, default false) Enables service worker that caches visited pages and resources for offline use.
