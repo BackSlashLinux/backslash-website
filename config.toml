@@ -8,7 +8,7 @@ title = "BackSlash Linux"
       unsafe = true
 
 [params]
-  BookTheme = 'auto'
+  BookTheme = 'light'
   BookToC = false
 #   BookLogo = 'logo.png'
   BookMenuBundle = '/menu'
