@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/book.min.958cea7827621d6fbcb3acf091344c3e44e3d2a9428f9c3c38bb9eb37bf8c45d.css" integrity="sha256-lYzqeCdiHW+8s6zwkTRMPkTj0qlCj5w8OLues3v4xF0=" crossorigin="anonymous">
+  <title>Donate | BackSlash Linux</title>
+  <link rel="icon" href="/favicon.png" type="image/x-icon">
+</head>
+
+<body dir="ltr"><input type="checkbox" class="hidden toggle" id="menu-control">
+  <input type="checkbox" class="hidden toggle" id="toc-control">
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        <nav>
+          <h2 class="book-brand"><a href="/"><span>BackSlash Linux</span></a></h2>
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/downloads/">Downloads</a></li>
+            <li><a href="https://docs.backslashlinux.com">Documentation</a></li>
+            <li><a href="https://backslashlinux.boards.net">Forums</a></li>
+            <li><a href="/donate" class="active">Donate</a></li>
+          </ul>
+        </nav>
+        <script>(function () { var a = document.querySelector("aside .book-menu-content"); addEventListener("beforeunload", function (b) { localStorage.setItem("menu.scrollTop", a.scrollTop) }), a.scrollTop = localStorage.getItem("menu.scrollTop") })()</script>
+      </div>
+    </aside>
+    <div class="book-page">
+      <header class="book-header">
+        <div class="flex align-center justify-between"><label for="menu-control"><img src="/svg/menu.svg"
+              class="book-icon" alt="Menu"></label>
+          <strong>Home</strong>
+          <label for="toc-control"></label>
+        </div>
+      </header>
+      <article class="markdown">
+        <h1>Donate for Development</h1>
+        <p>Please fill in the following information to donate for the development of BackSlash Linux. Please note that you might be asked to fill in some address details for shipping but since BackSlash Linux is available digitally, you won't actually receive any items on your address. We use PayPal for processing payments and a limitation of the payment gateway has actually added this caveat. You are free to use a fake address if you want to.</p>
+        <div id="smart-button-container">
+          <div style="display: none;"><label for="description">Attach a cool message </label><input type="text"
+              name="descriptionInput" id="description" maxlength="127" value="Donation"></div>
+          <p id="descriptionError" style="visibility: hidden; color:red; text-align: center;">Please enter a description
+          </p>
+          <div style="text-align: center"><label for="amount">Amount </label><input name="amountInput" type="number"
+              id="amount" value=""><span> USD</span></div>
+          <p id="priceLabelError" style="visibility: hidden; color:red; text-align: center;">Please enter a price</p>
+          <div id="invoiceidDiv" style="text-align: center; display: none;"><label for="invoiceid"> </label><input
+              name="invoiceid" maxlength="127" type="text" id="invoiceid" value=""></div>
+          <p id="invoiceidError" style="visibility: hidden; color:red; text-align: center;">Please enter an Invoice ID
+          </p>
+          <div style="text-align: center; margin-top: 0.625rem;" id="paypal-button-container"></div>
+        </div>
+      </article>
+      <footer class="book-footer">
+        <div class="flex flex-wrap justify-between"></div>
+        <script>(function () { function a(c) { const a = window.getSelection(), b = document.createRange(); b.selectNodeContents(c), a.removeAllRanges(), a.addRange(b) } document.querySelectorAll("pre code").forEach(b => { b.addEventListener("click", function (c) { a(b.parentElement), navigator.clipboard && navigator.clipboard.writeText(b.parentElement.textContent) }) }) })()</script>
+      </footer>
+      <div class="book-comments"></div><label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+  </main>
+
+</body>
+
+<script
+  src="https://www.paypal.com/sdk/js?client-id=AQ2csj-wwsq5xuiGmOEgYdykqPz4cxGIwp2JQcOeBNUP6NzM3IBdiMWQwt6QAC6te5Vc5y4blI8T6MSn&enable-funding=venmo&currency=USD"
+  data-sdk-integration-source="button-factory"></script>
+<script>
+  function initPayPalButton() {
+    var description = document.querySelector('#smart-button-container #description');
+    var amount = document.querySelector('#smart-button-container #amount');
+    var descriptionError = document.querySelector('#smart-button-container #descriptionError');
+    var priceError = document.querySelector('#smart-button-container #priceLabelError');
+    var invoiceid = document.querySelector('#smart-button-container #invoiceid');
+    var invoiceidError = document.querySelector('#smart-button-container #invoiceidError');
+    var invoiceidDiv = document.querySelector('#smart-button-container #invoiceidDiv');
+
+    var elArr = [description, amount];
+
+    if (invoiceidDiv.firstChild.innerHTML.length > 1) {
+      invoiceidDiv.style.display = "block";
+    }
+
+    var purchase_units = [];
+    purchase_units[0] = {};
+    purchase_units[0].amount = {};
+
+    function validate(event) {
+      return event.value.length > 0;
+    }
+
+    paypal.Buttons({
+      style: {
+        color: 'blue',
+        shape: 'pill',
+        label: 'pay',
+        layout: 'vertical',
+
+      },
+
+      onInit: function (data, actions) {
+        actions.disable();
+
+        if (invoiceidDiv.style.display === "block") {
+          elArr.push(invoiceid);
+        }
+
+        elArr.forEach(function (item) {
+          item.addEventListener('keyup', function (event) {
+            var result = elArr.every(validate);
+            if (result) {
+              actions.enable();
+            } else {
+              actions.disable();
+            }
+          });
+        });
+      },
+
+      onClick: function () {
+        if (description.value.length < 1) {
+          descriptionError.style.visibility = "visible";
+        } else {
+          descriptionError.style.visibility = "hidden";
+        }
+
+        if (amount.value.length < 1) {
+          priceError.style.visibility = "visible";
+        } else {
+          priceError.style.visibility = "hidden";
+        }
+
+        if (invoiceid.value.length < 1 && invoiceidDiv.style.display === "block") {
+          invoiceidError.style.visibility = "visible";
+        } else {
+          invoiceidError.style.visibility = "hidden";
+        }
+
+        purchase_units[0].description = description.value;
+        purchase_units[0].amount.value = amount.value;
+
+        if (invoiceid.value !== '') {
+          purchase_units[0].invoice_id = invoiceid.value;
+        }
+      },
+
+      createOrder: function (data, actions) {
+        return actions.order.create({
+          purchase_units: purchase_units,
+        });
+      },
+
+      onApprove: function (data, actions) {
+        return actions.order.capture().then(function (details) {
+          alert('Transaction completed by ' + details.payer.name.given_name + '!');
+        });
+      },
+
+      onError: function (err) {
+        console.log(err);
+      }
+    }).render('#paypal-button-container');
+  }
+  initPayPalButton();
+</script>
+
+</html>
