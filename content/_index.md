@@ -25,6 +25,5 @@ The current release of BackSlash Linux is **_BackSlash Linux Kristoff_**, which 
 ## Donations, Sponsorships and Development
 
 BackSlash Linux is developed by a single contributor right now but is always open to volunteers. The project's development environment and developer events are currently not sponsored but are (again) open to support. Individual donations ensure that BackSlash Linux will remain a vibrant and free operating system.
-https://www.paypal.me/KumarPriyansh
 
 <a href="/donate" class="book-btn">Donate for Development</a>
