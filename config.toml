@@ -1,6 +1,7 @@
 baseURL = "https://backslashlinux.com/"
 languageCode = "en-us"
 title = "BackSlash Linux"
+theme = "book"
 
 [markup]
   [markup.goldmark]
