@@ -14,3 +14,5 @@ You can download previous releases of BackSlash Linux in the archives section. A
 
 <a href="https://sourceforge.net/projects/backslash-linux/files/" class="book-btn">Access Archives</a>
 
+<script data-ad-client="ca-pub-7024182178259138" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
