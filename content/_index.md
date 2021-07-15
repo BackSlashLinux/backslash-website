@@ -20,7 +20,7 @@ BackSlash Linux is available to download for free and requires no payment at all
 
 The current release of BackSlash Linux is **_BackSlash Linux Kristoff_**, which was released on _December 25, 2018_. Please click the button below to download it or head over to the [downloads](downloads) section to see all available versions.
 
-<a href="https://sourceforge.net/projects/backslash-linux/files/latest/download" class="book-btn">Download BackSlash Linux Kristoff</a>
+<a href="/downloads" class="book-btn">Go to Downloads</a>
 
 ## Donations, Sponsorships and Development
 
